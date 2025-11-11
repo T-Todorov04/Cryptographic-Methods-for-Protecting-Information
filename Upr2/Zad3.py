@@ -10,9 +10,9 @@ def trithemius_encrypt(text: str, key: str) -> str:
     cipher = []
 
     for i, ch in enumerate(text):
-        p = letter_to_num(ch)
-        k = letter_to_num(key[i % len(key)])
-        c = (p + i + k) % 26
+        p = letter_to_num(ch) #Буква от текста
+        k = letter_to_num(key[i % len(key)]) #Буква от ключа
+        c = (p + i + k) % 26 #Финална буква
         cipher.append(num_to_letter(c))
 
     return "".join(cipher)
